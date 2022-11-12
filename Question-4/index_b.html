@@ -1,0 +1,55 @@
+<!-- Create a birthday cake order form using HTML5 and process the bill using JavaScript -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday cake Order form | Ruban</title>
+</head>
+
+<body>
+    <section class="birthday-form">
+        <div class="form">
+            <label for="">Number of 1/2 Kg Cakes?</label>
+            <input type="text" id="small">
+            
+            <br>
+            
+            <label for="">Number of 1 Kg Cakes?</label>
+            <input type="text" name="" id="medium">
+
+            <br>
+
+            <label for="">Number of 2 Kg Cakes?</label>
+            <input type="text" name="" id="large">
+
+            <br>
+
+            <input type="radio" name="tip" value="10">
+            <label for="">10%</label>
+
+            <br>
+
+            <input type="radio" name="tip" id="" value="15">
+            <label for="">15%</label>
+
+            <br>
+
+            <input type="radio" name="tip" id="" value="25">
+            <label for="">25%</label>
+
+            <br>
+
+            <p>Total Cost: <span id="total-price"></span></p>
+
+            <br>
+
+            <button type="button" onclick="cakeOrder()">Calculate order</button>
+        </div>
+    </section>
+</body>
+
+</html>
