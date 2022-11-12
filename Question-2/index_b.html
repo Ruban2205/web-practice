@@ -1,4 +1,5 @@
 <!-- Design a currency converter application using AngularJS  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency converter using AngularJS</title>
-
     <!-- Angular JS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
         integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
@@ -15,42 +15,39 @@
 </head>
 
 <body>
-
     <section ng-app="currency" ng-controller="currCtrl">
         <div class="contianer">
-            <label for="">Enter INR: </label>
+            <label for="">Enter Amount (in USD): </label>
             <input type="text" ng-model="userinput"><br><br>
             <label for="">From: </label>
-            <select name="currencyFrom" id="" ng-model="currecyfrom">
-                <option value="INR">INR</option>
-                <option value="USD">USD</option>
+            <select id="" ng-model="currecyfrom">
+                <option>INR</option>
+                <option>USD</option>
             </select>
-
             <label for="">To: </label>
             <select name="currencyTo" id="" ng-model="currecyto">
-                <option value="INR">INR</option>
-                <option value="USD">USD</option>
+                <option>INR</option>
+                <option>USD</option>
             </select>
-
-            <br><br><br>
-
+            <br><br>
             <button ng-click="convert()">Convert</button>
-
             <p ng-bind="result"></p>
         </div>
     </section>
-
-
     <script type="text/javascript">
-
         var app = angular.module('currency', []);
         app.controller('currCtrl', function ($scope) {
-
             $scope.convert = function () {
-                if ($scope.currencyfrom == "INR" && $scope.currencyto == "USD") {
-                    $scope.result = $scope.userinput * 60;
+                console.log($scope.currecyfrom);
+                if ($scope.currecyfrom == "USD" && $scope.currecyto == "INR") {
+                    console.log(parseInt($scope.userinput) * 60);
+                    $scope.result = parseInt($scope.userinput) * 60;
                 }
-            }
+                else if ($scope.currecyfrom == "INR" && $scope.currecyto == "USD") {
+                    console.log(parseInt($scope.userinput) / 60);
+                    $scope.result = parseInt($scope.userinput) / 60;
+                }
+            };
 
         });
     </script>
