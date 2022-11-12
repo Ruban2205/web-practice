@@ -50,6 +50,24 @@
             <button type="button" onclick="cakeOrder()">Calculate order</button>
         </div>
     </section>
+
+    <script type="text/javascript">
+        function cakeOrder(){
+            var small = document.getElementById('small').value; 
+            var medium = document.getElementById('medium').value; 
+            var large = document.getElementById('large').value; 
+
+            var total = (small * 100) + (medium * 100) + (large * 100);
+            var taxAmount = ((9 / 100) * total) + total; 
+
+            var radioBtn = document.querySelector('input[name="tip"]:checked').value; 
+            var tip = ((radioBtn / 100) * taxAmount); 
+            var totalCost = taxAmount + tip; 
+
+            document.getElementById('total-price').innerHTML = totalCost;
+        }
+    </script>
+
 </body>
 
 </html>
