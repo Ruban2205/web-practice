@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function flipCoin(){
+            var image = document.getElementById('image');
+            var headCount = document.getElementById('headCount');
+            var tailCount = document.getElementById('tailCount');
+
+            var intHead = parseInt(headCount.innerHTML);
+            var intTail = parseInt(tailCount.innerHTML);
+
+            var imgList = ['coinHead.jpg','coinTail.jpg'];
+            var rand = Math.floor(Math.random() * 2);
+            console.log(imgList[0])
+
+
+            if(imgList[rand] == imgList[0]){
+                headCount.innerHTML = intHead + 1; 
+            }
+            else{
+                tailCount.innerHTML = intTail + 1; 
+            }
+            image.src = imgList[rand];
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Coin Flip - Head or Tail ?</h1>
+    <img src="coinHead.jpg" alt="" id="image">
+    <p>No of heads : <span id="headCount">0</span></p>
+    <p>No of tails : <span id="tailCount">0</span></p>
+    <button onclick="flipCoin()">Flip Coin</button>
+</body>
+</html>
