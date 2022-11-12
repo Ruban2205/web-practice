@@ -1,0 +1,91 @@
+<!-- Create a webpage using proper HTML5 and CSS3 
+> Add website title and align the text at center of the page. 
+> set the font size: 44px, backgrond color and add the text shadow effect. 
+> Add two thumbnails below the banner with equal amount of space on the screen.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple webpage | Ruban</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .head-container{
+            background-color: darkorchid;
+            padding: 2rem;
+            text-align: center;
+            color: lightgrey;
+            font-size: 44px;
+        }
+
+        .head-text{
+            text-shadow: 3px 3px darkblue;
+        }
+
+        .home-container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        .img-1, .img-2{
+            width: 45%;
+            position: relative;
+        }
+
+        .image{
+            position: relative;
+        }
+
+        .img-text{
+            position: absolute;
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 1rem;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section id="header">
+        <div class="head-container">
+            <h1 class="head-text">My first website</h1>
+        </div>
+    </section>
+
+    <section id="home">
+        <div class="home-container">
+            <div class="img-1">
+                <div class="image">
+                    <img src="assets/sample-img.jpg" alt="">
+                </div>
+                <div class="img-text">About us</div>
+            </div>
+            <div class="img-2">
+                <img src="assets/sample-img.jpg" alt="">
+                <div class="img-text">Menu item 1</div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
