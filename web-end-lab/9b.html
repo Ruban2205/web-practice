@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>9b</title>
+    </head>
+    <body>
+        <h1> ODD or Even</h1><br><br>
+        Enter the number:<input type="number" id="in"><br><br>
+        <button onclick="calc()">check</button>
+        <div id="output"></div>
+
+        <script>
+       
+            function calc(){
+            var num=document.getElementById("in").value;
+            if(num % 2 == 0) {
+                document.getElementById("output").innerHTML="The number is even.";
+               }
+            else {
+                document.getElementById("output").innerHTML="The number is odd.";
+             }
+            
+            }
+            
+
+        </script>
+
+        
+    </body>
+</html>

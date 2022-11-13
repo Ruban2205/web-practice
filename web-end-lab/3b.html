@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coin flip</title>
+</head>
+<body>
+    <button onclick="flip()">Flip</button>
+    <div id="coin"></div>
+    <h3 id="count"></h3>
+<script>
+    let hc=0,
+    tc=0;
+    function flip(){
+        const indx = Math.floor(Math.random()*2);
+       
+        if(indx==0){
+            hc+=1;
+            document.getElementById("coin").innerHTML='<img src="heads.jpg">'
+        }
+         
+        else{
+            tc+=1;
+            document.getElementById("coin").innerHTML='<img src="tails.jpg">'
+
+        }
+
+        document.getElementById("count").innerHTML="HEAD: "+ hc +"<br>"+"TAIL:"+tc 
+             
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html!>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> 1b </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <p>
+        Enter the width:<input type="number" id="width"><br><br>
+        Enter the height:<input type="number" id="height"> <br>
+    </p>
+    <button id="btn">Plant</button><br><br>
+    <div id="plant"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            var arr = ["images/fruit.jpg", "images/fruit.jpg"];
+
+            $("#btn").click(function () {
+
+                console.log("hello World!");
+
+                var w = $("#width").val();
+                var h = $("#height").val();
+
+                console.log(w);
+                console.log(h);
+
+                for (let i = 0; i < w; i++) {
+                    for (let j = 0; j < h; j++) {
+                        var ran = Math.floor(Math.random() * 2);
+                        var image = '<img src=' + arr[ran] + ' height="150px" width="150px" >';
+                        $("#plant").append(image);
+                    }
+                    $("#plant").append('<br>');
+                }
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

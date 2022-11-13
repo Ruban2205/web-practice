@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter the first number :<input id="first"><br><br>
+    enter the second number :<input id="second"><br><br>
+    <button onclick="calc()">find the largest number</button>
+    <div id="result"></div>
+
+    <script>
+        function calc(){
+            var num1=document.getElementById("first").value;
+            var num2=document.getElementById("second").value;
+            if(num1>num2){
+                document.getElementById("result").innerHTML= num1+" is greater"
+            }
+            else if(num2>num1){
+                document.getElementById("result").innerHTML= num2+ "is greater"
+            }
+            else if(num1==num2){
+                document.getElementById("result").innerHTML=  "1st and the 2 nd are the same number"
+            }
+        }
+    </script>
+</body>
+</html>

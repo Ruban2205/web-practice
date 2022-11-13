@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>gardern bed</h2>
+    <div class="container">
+
+        row:<input type="number" id="width">
+        column:<input type="number" id="height">
+
+        <button id="btn" onclick="calc()">calculate</button>
+
+    </div>
+    <div id="plant"></div>
+
+    <script>
+        function calc() {
+            var w = document.getElementById("width").value;
+            var h = document.getElementById("height").value;
+            var img = ["images/fruit.jpg", "images/fruit.jpg"];
+
+            console.log(w);
+            console.log(h);
+
+            for (let i = 0; i < w; i++) {
+                for (let j = 0; j < h; j++) {
+                    var ran = Math.floor(Math.random() * 2);
+
+                    console.log(ran);
+
+                    document.getElementById("plant").innerHTML += '<img src="' + img[ran] + '" height="150" width="150" >';
+                }
+                document.getElementById("plant").innerHTML += '<br>';
+            }
+        }
+    </script>
+</body>
+
+</html>

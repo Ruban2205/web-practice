@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10b</title>
+    <script>
+        function color(){
+            var clr1 = Math.floor(Math.random()*255);
+            var clr2 = Math.floor(Math.random()*255);
+            var clr3 = Math.floor(Math.random()*255);
+            var color = "rgb(" + clr1 + "," + clr2 + "," + clr3 + ")";
+
+            document.getElementsByTagName("body")[0].style="background-color:" + color
+
+
+        }
+    setInterval("color()",3000);
+    </script>
+
+</head>
+<body>
+    <div >
+        <h1>the background will change for 3 seconds</h1>
+
+    </div>
+   
+    
+</body>
+</html>
+

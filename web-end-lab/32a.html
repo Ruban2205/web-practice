@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+    <h2>Post your comments</h2>
+    
+    <form>
+        <textarea ng-model="text" placeholder="post your comments" style="width:450px"></textarea><br>
+        <button ng-click="add()">post comments</button>
+        <ul>
+            <li ng-repeat="c in comment">{{c}}</li>
+        </ul>
+
+    </form>
+    <script>
+        var app=angular.module("myapp",[]);
+        app.controller("myctrl",function($scope){
+            $scope.comment=[];
+            $scope.add=function(){
+                if($scope.text!=""){
+                  $scope.comment.push($scope.text);
+                  $scope.text="";
+             }
+
+
+          };
+           
+      });
+    </script>
+</body>
+</html>

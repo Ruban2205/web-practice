@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 7 - 26 - 32 | Simple Web Page</title>
+
+    <style>
+        *{
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        #card-section{
+             background-image:url("images/back.jpg") ;
+             width:100%; 
+             height:100vh; 
+             background-size: cover;
+             background-repeat: no-repeat;
+        }
+
+        .title{
+            background-color: blueviolet;
+            text-align: center;
+            padding: 2rem;
+            color: lightgrey;
+            font-size: 40px;
+            text-shadow: 2px 2px darkblue; 
+        }
+
+        .cards{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5rem; 
+        }
+
+        .image img{
+            width: 100%; 
+            border-radius: 100%; /* to make the image round */
+            border: 5px solid black;
+            box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.427);
+        }
+
+        .image{
+            position: relative; 
+            text-align: center;
+        }
+
+        .overlay{
+            position: absolute;
+            top:0; 
+            right:0; 
+            bottom: 0; 
+            left: 0; 
+            border-radius: 100%; 
+            border: 5px solid black; 
+            background-color: green; 
+            opacity: .6; 
+            transition: 250ms ease-in-out; 
+        }
+
+        .overlay:hover{
+            opacity: 0; 
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-nav"> 
+        <h1 class="title"> My First Website</h1>
+    </div> 
+
+    <div id="card-section">
+
+        <div class="cards">
+            <div class="card-1">
+                <div class="card-image-1">
+                    <div class="image">
+                        <img src="images/father.jpg" >
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Mr.Father's Name</h3>
+                </div>
+            </div>
+
+            <div class="card-2">
+                <div class="card-image-2">
+                    <div class="image">
+                        <img src="images/mother.jpg">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Mrs.Mother's Name</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

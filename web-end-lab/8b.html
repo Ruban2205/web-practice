@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter the height(in meters):<input text="number" id="h"><br><br>
+    enter the weight(in kg):<input text="number" id="w"><br><br>
+    <button onclick="calc()">calculate bmi</button>
+    <div id="result"></div>
+    <div id="res"></div>
+    <script>
+        function calc(){
+           
+            var h= document.getElementById("h").value;
+            var w= document.getElementById("w").value;
+            var bmi;
+            bmi= w/(h*h) ; 
+            console.log(bmi)
+            if(bmi<18){
+                document.getElementById("result").innerHTML="you are underweight";
+            }
+            else if(bmi>18 && bmi<30){
+                document.getElementById("result").innerHTML="you are mormal";
+
+            }
+            else if(bmi>30){
+                document.getElementById("result").innerHTML="you are obese";
+
+            }
+            document.getElementById("res").innerHTML="bmi is :"+ bmi
+            
+        }
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>2b</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+    </head>
+    <body>
+       <div ng-app="myapp" ng-controller="myctrl">
+        Enter the amount :<input type="text" ng-model="amt">
+        from:<select ng-model="from">
+            <option>USD</option>
+            <option>INR</option>
+        </select>
+        To:<select ng-model="to">
+            <option>INR</option>
+            <option>USD</option>
+        </select>
+        
+        <button ng-click="convert()">convert</button>
+        <div>{{out}}</div>
+    </div> 
+    <script>
+        var app = angular.module('myapp', []);
+   app.controller('myctrl', function ($scope) {
+       $scope.convert = function () {
+           if ($scope.from == "USD" && $scope.to == "INR") {
+               $scope.out = $scope.amt * 60;
+           }
+           else if ($scope.from == "INR" && $scope.to == "USD") {
+               $scope.out = $scope.amt / 60;
+           }
+       };
+
+   });
+   </script>
+
+        
+    </body>
+
+</html>

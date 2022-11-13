@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+</head>
+
+<body ng-app="myapp" ng-controller="myctrl">
+    <form name="myform">
+        <div>
+            <div style="background-color:aqua ; width:550px; ">
+                <h1>Contact Form</h1>
+            </div>
+            Name:<br>
+            <input ng-model="fname" name="fname" type="text" placeholder="first name" required>
+            <span ng-show="myform.fname.$invalid"> This name is required.</span>
+
+            <input ng-model="lname" type="text" placeholder="Last name" required><br><br>
+            Email:
+            <input ng-model="mail" type="email" placeholder="email">
+
+            <br><br>
+
+            Phone:<br>
+            <input ng-model="phone" type="number" placeholder="phone number"><br><br>
+
+            <button ng-click="sub()">submit</button>
+            <div ng-bind="output"></div>
+            <div ng-bind="output1"></div>
+            <div ng-bind="output2"></div>
+            <div ng-bind="output3"></div>
+        </div>
+    </form>
+    <script>
+        var myapp = angular.module("myapp", [])
+        myapp.controller("myctrl", function ($scope) {
+            $scope.sub = function () {
+                $scope.output = "first name :" + " " + $scope.fname;
+                $scope.output1 = "last name :" + " " + $scope.lname;
+                $scope.output2 = "Email :" + " " + $scope.mail;
+                $scope.output3 = "Phone:" + " " + $scope.phone;
+
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

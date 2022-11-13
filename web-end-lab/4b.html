@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4b</title>
+</head>
+<body>
+    <h1>order your Birthday cake </h1>
+    select size:<select id="size">
+        <option>small</option>
+        <option>medium</option>
+        <option>large</option>
+    </select><br><br>
+
+    slect tip:<select id="tip">
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+    </select><br><br>
+
+    <button onclick="calc()">calculate the amount</button>
+    <div id="output"></div>
+    <div id="output1"></div>
+    <div id="output2"></div>
+
+    <script>
+        function calc(){
+            const s=document.getElementById("size").value;
+            const t=parseInt(document.getElementById("tip").value);
+            const tax=9;
+            let cakecost,taxcost,total,tip;
+            if(s=="small"){
+                cakecost=100;
+                taxcost=(cakecost*(tax/100));
+                tip=(cakecost + taxcost)*(t/100);
+                total=cakecost+taxcost+tip;
+
+            }
+            else if(s=="medium"){
+                cakecost=200;
+                taxcost=(cakecost*(tax/100));
+                tip=(cakecost + taxcost)*(t/100);
+                total=cakecost+taxcost+tip;
+
+            }
+            if(s=="large"){
+                cakecost=300;
+                taxcost=(cakecost*(tax/100));
+                console.log(taxcost)
+                tip=(cakecost + taxcost)*(t/100);
+                total=cakecost+taxcost+tip;
+
+            }
+            document.getElementById("output").innerHTML="cake cost:" + cakecost +"<br>"
+            document.getElementById("output1").innerHTML="tax cost:"+ taxcost+"<br>";
+            document.getElementById("output2").innerHTML="total cost:"+ total+"<br>";
+            
+
+        }
+    </script>
+</body>
+</html>
