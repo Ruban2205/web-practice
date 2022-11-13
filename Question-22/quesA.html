@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .topnav {
+            background-color: blue;
+            overflow: hidden;
+        }
+        .topnav a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:active {
+            background-color: grey;
+            color: black;
+        }
+    </style>
+    <script>
+        var app = angular.module('myApp',['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider
+            .when('/',{
+                templateUrl : "rectangle.htm",
+                controller : 'myCtrl'
+            })
+            .when('/circle',{
+                templateUrl : "circle.htm",
+                controller : 'myCtrl'
+            })
+            .when('/triangle',{
+                templateUrl : "triangle.htm",
+                controller : 'myCtrl'
+            });
+        });
+        app.controller('myCtrl', function ($scope) {
+            $scope.rectangleArea=function(){
+                $scope.areaOfRectangle = parseFloat($scope.length) * parseFloat($scope.width);
+                };
+            $scope.circleArea = function(){
+                $scope.areaOfCircle = Math.PI * (parseFloat($scope.radius) * parseFloat($scope.radius))
+            };
+            $scope.triangleArea = function(){
+                $scope.areaOfTriangle = (parseFloat($scope.theight) * parseFloat($scope.tbase)) / 2;
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div class="topnav">
+        <a href="#!/">Rectangle</a>
+        <a href="#!circle" >Circle</a>
+        <a href="#!triangle">Triangle</a>
+    </div>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+</body>
+</html>

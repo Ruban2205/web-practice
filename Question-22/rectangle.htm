@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset, label, input{
+            padding: 8px;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <fieldset>
+        <legend>Rectange</legend>
+        <label for="">Length :</label>
+        <input type="text" name="" id="" ng-model="length"><br>
+        <label for="">Width : &nbsp;</label>
+        <input type="text" name="" id="" ng-model="width">
+        <br><br>
+        <button ng-click="rectangleArea()">Area</button>
+        <br>
+        <p>The result is <span>{{areaOfRectangle}}</span></p>
+    </fieldset>
+</body>
+</html>

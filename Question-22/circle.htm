@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    fieldset, label, input{
+        padding: 8px;
+    }
+</style>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <fieldset>
+        <legend>Circle</legend>
+        <label for="">Radius :</label>
+        <input type="text" name="" id="" ng-model="radius"><br>
+        <br>
+        <button ng-click="circleArea()">Area</button>
+        <br><br>
+        <p>The result is <span>{{areaOfCircle}}</span></p>
+    </fieldset>
+</body>
+</html>
