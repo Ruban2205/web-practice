@@ -1,0 +1,57 @@
+<!-- Design a currency converter application using AngularJS  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter using AngularJS</title>
+    <!-- Angular JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <section ng-app="currency" ng-controller="currCtrl">
+        <div class="contianer">
+            <label for="">Enter Amount (in USD): </label>
+            <input type="text" ng-model="userinput"><br><br>
+            <label for="">From: </label>
+            <select id="" ng-model="currecyfrom">
+                <option>INR</option>
+                <option>USD</option>
+            </select>
+            <label for="">To: </label>
+            <select name="currencyTo" id="" ng-model="currecyto">
+                <option>INR</option>
+                <option>USD</option>
+            </select>
+            <br><br>
+            <button ng-click="convert()">Convert</button>
+            <p ng-bind="result"></p>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var app = angular.module('currency', []);
+        app.controller('currCtrl', function ($scope) {
+            $scope.convert = function () {
+                console.log($scope.currecyfrom);
+                if ($scope.currecyfrom == "USD" && $scope.currecyto == "INR") {
+                    console.log(parseInt($scope.userinput) * 60);
+                    $scope.result = parseInt($scope.userinput) * 60;
+                }
+                else if ($scope.currecyfrom == "INR" && $scope.currecyto == "USD") {
+                    console.log(parseInt($scope.userinput) / 60);
+                    $scope.result = parseInt($scope.userinput) / 60;
+                }
+            };
+
+        });
+    </script>
+
+</body>
+
+</html>

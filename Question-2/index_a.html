@@ -1,0 +1,76 @@
+<!-- Create a HTML Document that conforms to HTML5 standards and has the following elements: 
+> Embed the video using video tag. Play the video when user clicks on the play button. 
+> Include definition list, ordered nested list and unordered nested list.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Create Elements | Ruban Gino Singh</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="video-home">
+        <div class="container">
+            <div class="video-container">
+                <video width="1280" height="720" controls>
+                    <source src="assets/sample.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="description-list">
+            <h3>Description List</h3>
+            <dl>
+                <dt>Coffee</dt>
+                <dd>Black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>White cold drink</dd>
+            </dl>
+        </div>
+
+        <div class="ordered-list">
+            <h3>Ordered nested list</h3>
+            <ol>
+                <li>parent-item</li>
+                <li>child-parent-item</li>
+                <ol>
+                    <li>child-list-item</li>
+                    <li>child-list-item</li>
+                </ol>
+            </ol>
+        </div>
+
+        <div class="unordered-list">
+            <h3>Un ordered Nested list</h3>
+            <ul>
+                <li>parent-item</li>
+                <li>child-parent-item</li>
+                <ul>
+                    <li>child-list-item</li>
+                    <li>child-list-item</li>
+                </ul>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>

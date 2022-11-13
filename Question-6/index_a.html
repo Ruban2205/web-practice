@@ -1,0 +1,72 @@
+<!-- Display a digital clock using JQuery -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digita clock JQuery | Ruban</title>
+
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-size: 5rem;
+            }
+        </style>
+
+</head>
+
+<body>
+    <section id="digital-clock">
+        <div class="container">
+            <h1 id="clock-display" onload="showTime()"></h1>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        function showTime(){
+            var date = new Date(); 
+            var hour = date.getHours(); 
+            var min = date.getMinutes(); 
+            var sec = date.getSeconds(); 
+            var session = "AM";
+
+            if (hour == 0){
+                hour = 12; 
+            }
+
+            if (hour > 12){
+                hour = hour - 12; 
+                session = "PM"; 
+            }
+
+            hour = (hour < 10) ? "0" + hour : hour; 
+            min = (min < 10) ? "0" + min : min; 
+            sec = (sec < 10) ? "0" + sec : sec; 
+
+            var time = hour + ":" + min + ":" + sec + " " + session; 
+
+            $('#clock-display').text(time); 
+            
+            setTimeout(showTime, 1000);
+        }
+        showTime(); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!-- Design a fruit farm bed using Javascript. When you click the "Plant Garden"
+button, the page should generate a rectangular grid of fruit images. The
+dimensions of grid are given by the values entered in the text boxes.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit farm | Ruban </title>
+</head>
+
+<body>
+
+    <section id="fruit-farm">
+        <div class="container">
+            <label for="">Row: </label>
+            <input type="number" name="" id="row">
+
+            <br><br>
+
+            <label for="">Column: </label>
+            <input type="number" name="" id="col">
+
+            <br><br>
+
+            <h3>Result: </h3>
+            <div id="result"></div>
+
+            <br><br>
+
+            <button type="button" onclick="grow()">Grow Farm</button>
+
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        function grow(){
+            var row = document.getElementById("row").value;
+            var col = document.getElementById("col").value; 
+            var imgArray = ["assets/apple.jpg", "assets/orange.jpg"];
+            var garden = document.getElementById("result"); 
+
+            for (let i=0; i<row; i++){
+                for (let j=0; j<col; j++){
+                    var random = Math.floor(Math.random() * 2); 
+                    var img = '<img src=' + imgArray[random] + ' width="150px" height="150px"></img>'; 
+                    garden.innerHTML += img; 
+                 }
+                 garden.innerHTML += '<br>'; 
+            }
+        }
+    </script>
+
+</body>
+
+</html>

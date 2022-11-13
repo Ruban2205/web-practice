@@ -1,0 +1,72 @@
+<!-- Create a HTML document that conforms to HTML5 standards and has the following elements: 
+Header should be at the top of the page. It contains the company name & company logo. 
+Below the title include the navigation links and search box as shown in the mockup
+screen -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front end page | Ruban</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .img-container {
+            width: 15%;
+            padding: 0 1rem 0 0;
+        }
+
+        .first-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .second-container {
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid black;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="home">
+        <div class="first-container">
+            <div class="img-container">
+                <img src="assets/profile.png" alt="">
+            </div>
+            <div class="title-container">
+                <h1>Company logo</h1>
+            </div>
+        </div>
+
+        <div class="second-container">
+            <a href="">Link1</a>
+            <p>|</p>
+            <a href="">Link2</a>
+            <p>|</p>
+            <a href="">Link3</a>
+            <p>|</p>
+            <input type="text" placeholder="search">
+        </div>
+    </section>
+
+</body>
+
+</html>
