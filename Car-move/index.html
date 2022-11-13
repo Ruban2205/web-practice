@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving car | Ruban</title>
+</head>
+<body>
+    <div>
+        <img id="car" src="images/car.png" alt="car" width="200px">
+    <br>
+
+    <button onclick="move()">move</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="initial()">start</button>
+    </div>
+
+     <script>
+        function init(){
+            obj = document.getElementById('car');
+            obj.style.position = "relative"
+            obj.style.left = "0px"
+        }
+
+        function move(){
+            obj.style.left = parseInt(obj.style.left) + 1 + "px"
+            animate = setTimeout("move()",10)
+        }
+
+        function initial(){
+            clearTimeout(animate);
+            obj.style.left = "0px";
+        }
+
+        function stop(){
+            clearTimeout(animate)
+            obj.style.left = parseInt(obj.style.left)
+        }
+        
+        window.load = init()
+    </script>
+</body>
+</html>
