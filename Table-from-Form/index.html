@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+    <script>
+		function AddRow(){
+			var AddRown = document.getElementById('table');
+			var NewRow = AddRown.insertRow(-1);
+			var Name = document.getElementById("name").value;
+			var Age = document.getElementById("age").value;
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			cel1.innerHTML = Name;
+			cel2.innerHTML = Age;
+
+		}
+    </script>
+</head>
+<body>
+    <center><h2>Add values to Table from form</h2></center>
+    <center>
+        <form action="">
+            <label for="">Name :</label>
+            <input type="text" name="" id="name"><br><br>
+            <label for="">Age :</label>
+            <input type="text" name="" id="age">
+            <br>
+            <input onclick="AddRow()" type="button" value="Add">
+        </form>
+        <br><br><hr><br>
+        <table id="table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
