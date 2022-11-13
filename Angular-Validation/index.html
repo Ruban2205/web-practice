@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope){
+                $scope.name = 'Mahimai';
+                $scope.numberPattern = /^[0-9]{10}$/
+                $scope.passwordPattern = /^[a-zA-Z0-9]{4,8}$/
+                $scope.agePattern = /^[0-9]{1,2}$/
+            });
+        </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <center><h1>From Validation with Angular</h1></center>
+<center>
+    <div>
+        <form action="" name="myform">
+            <div class="form-group">
+                <label for=""> Name :</label>
+                <input type="text" name="myname" id="" ng-model="name" name="myname" required>
+                <span ng-show="myform.myname.$dirty && myform.myname.$error.required"> Enter your name</span> 
+            </div>
+            <div class="form-group">
+                <label for=""> Email :</label>
+                <input type="email" name="myemail" ng-model="email" id="" required > 
+                <span ng-show="myform.myemail.$dirty && myform.myemail.$error.required">Enter your email</span>
+                <span ng-show="myform.myemail.$dirty && myform.myemail.$error.email">Enter correct email format</span>
+            </div>
+            <div class="form-group">
+                <label for=""> Phone :</label>
+                <input type="number" name="mymobile" id="" ng-model="mobile" ng-pattern="numberPattern" required> 
+                <span  ng-show="myform.mymobile.$dirty && myform.mymobile.$error.required">Mobile number is required</span>
+                <span  ng-show="myform.mymobile.$dirty && myform.mymobile.$error.number">Enter numerical value</span>
+                <span  ng-show="myform.mymobile.$dirty && myform.mymobile.$error.pattern">Enter correct format</span>
+            </div>
+            <div class="form-group">
+                <label for=""> Password :</label>
+                <input type="text" name="mypass" ng-model="pass"  id="" ng-pattern="passwordPattern" required>
+                <span ng-show="myform.mypass.$dirty && myform.mypass.$error.required" >Enter password</span>
+                <span ng-show="myform.mypass.$dirty && myform.mypass.$error.pattern">Enter correct foramt</span>
+            </div>
+            <div class="form-group">
+                <label for="">Age :</label>
+                <input type="number" name="myage" ng-model="age" id="" required ng-pattern="agePattern">
+                <span ng-show="myform.myage.$dirty && myform.myage.$error.required">Enter your age</span>
+                <span ng-show="myform.myage.$dirty && myform.myage.$error.number">Enter numbers only</span>
+                <span ng-show="myform.myage.$dirty && myform.myage.$error.pattern">Enter your correct age</span>
+            </div>
+            <!-- <div class="form-group">
+                <label for="">Gender :</label>
+                <input type="radio" name="mygender" ng-model=""  id="" required>
+                <label for="">Male</label>
+                <input type="radio" name="mygender" ng-model="" id="" required>
+                <label for="">Female</label>
+                <span ng-show="myform.mygender.$dirty && myform.mygender.$error.required">Select a gender</span>
+            </div> -->
+            <!-- <div class="form-group" >
+                <label for="">Language :</label>
+                <input type="checkbox" class="form-check-input" id="check1" name="options" value="Java Script"  ng-model="myopt">
+                <label class="form-check-label" for="check1">Java Script</label> &nbsp;
+                <input type="checkbox" class="form-check-input" id="check2" name="options" value="Python" ng-model="myopt1">
+                <label class="form-check-label" for="check1">Python</label> &nbsp;
+                <input type="checkbox" class="form-check-input" id="check3" name="options" value="C++"  ng-model="myopt2">
+                <label class="form-check-label" for="check1">C++</label> &nbsp;
+                <input type="checkbox" class="form-check-input" id="check4" name="options" value="Java"  ng-model="myopt3">
+                <label class="form-check-label" for="check1">Java</label>
+                <span ng-show="myform.options.$dirty && myform.options.$error.required">
+                    Select a language
+                </span>
+            </div> -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</center>
+</body>
+</html>

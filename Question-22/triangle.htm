@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    fieldset, label, input{
+        padding: 8px;
+    }
+</style>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <fieldset>
+        <legend>Triangle</legend>
+        <label for="">Height :</label>
+        <input type="text" name="" id="" ng-model="theight"><br>
+        <label for="">Base :</label>
+        <input type="text" name="" id="" ng-model="tbase"><br>
+        <br>
+        <button ng-click="triangleArea()">Area</button>
+        <br><br>
+        <p>The result is <span>{{areaOfTriangle}}</span></p>
+    </fieldset>
+</body>
+</html>
